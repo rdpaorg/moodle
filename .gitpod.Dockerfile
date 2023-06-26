@@ -48,7 +48,7 @@ RUN curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash - && \
 RUN git clone --branch MOODLE_X_Y_STABLE --depth 1 https://github.com/moodle/moodle.git .
 
 # Copy the development configuration file
-COPY config-dev.php config.php
+#COPY config-dev.php config.php
 
 # Install Moodle dependencies
 RUN composer install --no-dev
