@@ -12,7 +12,6 @@ RUN apt-get update && \
         libpng-dev \
         libzip-dev \
         unzip \
-        git \
         curl \
         libicu-dev \
         libxml2-dev \
@@ -43,15 +42,6 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 # Install Node.js and NPM
 RUN curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash - && \
     apt-get install -y nodejs
-
-# Clone the Moodle repository
-# RUN git clone --branch MOODLE_X_Y_STABLE --depth 1 https://github.com/moodle/moodle.git .
-
-# Copy the development configuration file
-#COPY config-dev.php config.php
-
-# Install Moodle dependencies
-RUN composer install --no-dev
 
 # Set the ownership and permissions for Moodle files
 RUN chown -R www-data:www-data .
