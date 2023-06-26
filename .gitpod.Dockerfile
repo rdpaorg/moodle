@@ -17,7 +17,7 @@ RUN apt-get update && \
         libicu-dev \
         libxml2-dev \
         libxslt-dev \
-        mysql-client \
+        default-mysql-client \
         sudo \
         vim \
         nodejs \
